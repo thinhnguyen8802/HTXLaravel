@@ -1,0 +1,76 @@
+/* loading animation */
+.preloader .circle {
+    display: flex;
+    gap: 12px;
+}
+
+.preloader .circle .line {
+    margin-top: 48px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100rem;
+    border: 3px solid;
+}
+
+.preloader .circle .line1 {
+    border-color: #000;
+    animation: leftToRight linear .4s infinite;
+}
+
+.preloader .circle .line2 {
+    border-color: #1d1c1c;
+    animation: leftToRight linear .4s 0.1s infinite;
+}
+
+.preloader .circle .line3 {
+    border-color: #3f3f3f;
+    animation: leftToRight linear .4s 0.2s infinite;
+}
+
+.preloader .circle .line4 {
+    border-color: #6d6b6b;
+    animation: leftToRight linear .4s 0.3s infinite;
+}
+
+.preloader .circle .line5 {
+    border-color: #c5c5c5;
+    animation: leftToRight linear .4s 0.4s infinite;
+
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* end loading animation */
+body:not(.layout-fixed) .main-sidebar,
+.sidebar-mini.sidebar-collapse .main-sidebar {
+    transition: all 0.15s linear;
+}
+
+/* nút thêm mới */
+.content-header h1 {
+    position: relative;
+}
+
+.icon-addNew {
+    position: absolute;
+    font-size: 16px;
+    color: #ff0000;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.icon-addNew i:hover {
+    text-shadow: #3f3f3f;
+}

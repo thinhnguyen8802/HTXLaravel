@@ -1,0 +1,325 @@
+:root {
+    --toast-success: #1ccd34;
+    --toast-failed: #ea4e4e;
+    --toast-warning: #f6e63d;
+}
+
+.toastms {
+    background-color: #fff;
+    position: fixed;
+    top: 105px;
+    right: 23px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0px 5px #333;
+    z-index: 999999;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toastms.active {
+    transform: translateX(0%);
+}
+
+.toastms.close {
+    display: none;
+}
+
+.toast-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100em;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.success .toast-icon {
+    background-color: var(--toast-success);
+}
+
+.failed .toast-icon {
+    background-color: var(--toast-failed);
+}
+
+.warning .toast-icon {
+    background-color: var(--toast-warning);
+}
+
+.toast-content {
+    margin-right: 30px;
+}
+
+.toast-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.toast-message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.close-toast {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.toastms .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: 9999;
+}
+
+.toastms .progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.toastms.success .progress:before {
+    background-color: var(--toast-success);
+}
+
+.toastms.failed .progress:before {
+    background-color: var(--toast-failed);
+}
+
+.toastms.warning .progress:before {
+    background-color: var(--toast-warning);
+}
+
+.progress.active:before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}
+
+/* +++++++++++++++++++ */
+.custom-switch {
+    padding-left: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.custom-switch .switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+
+.custom-switch .switch input {
+    display: none;
+}
+
+.custom-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ca2222;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.custom-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.custom-switch input:checked+.slider {
+    background-color: #2ab934;
+}
+
+.custom-switch input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.custom-switch input:checked+.slider:before {
+    -webkit-transform: translateX(65px);
+    -ms-transform: translateX(65px);
+    transform: translateX(65px);
+}
+
+/*------ ADDED CSS ---------*/
+.on {
+    display: none;
+}
+
+.on,
+.off {
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+input:checked+.slider .on {
+    display: block;
+}
+
+input:checked+.slider .off {
+    display: none;
+}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* __________________________ */
+#preview_image {
+    border-radius: 100rem;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.center {
+    margin: 0 auto;
+}
+.image-banner-sm{
+    width: 150px;
+    height: 90px;
+    border-radius: 4px;
+}
+.image-80 {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 100rem;
+    object-fit: cover;
+}
+.image-42 {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #ddd;
+    border-radius: 100rem;
+    object-fit: cover;
+}
+
+.image-80-v {
+    border-radius: 10px;
+}
+
+.operation form {
+    float: right;
+}
+
+.operation a:first-child {
+    margin-right: 20px;
+}
+
+.btn-remove {
+    color: #ccc;
+}
+
+.btn-edit {
+    font-size: 22px;
+}
+
+.label-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+label span.text_error {
+    font-size: 11px;
+    font-style: italic;
+    color: #ff0000;
+}
+
+/* Custom lable input animation */
+.form-item {
+    position: relative;
+    margin-bottom: 25px
+}
+
+.form-item input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: solid 1px #ccc;
+    transition: all .3s ease;
+    padding: 0 15px;
+    border-radius: 2px;
+
+}
+
+.form-item input:focus {
+    border-color: #ccc;
+}
+
+.form-item label {
+    position: absolute;
+    cursor: text;
+    z-index: 2;
+    top: 13px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+    transition: all .3s ease
+}
+
+.form-item input:focus+label,
+.form-item input:valid+label,
+.form-item select:valid+label {
+    font-size: 11px;
+    top: -5px
+}
+
+.form-item input:focus+label {
+    color: #000;
+}
+
+.thumbnail{
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    object-fit: cover;
+}
